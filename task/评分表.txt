@@ -1,4 +1,7 @@
+总分100分
+
 检查项：交付路径与SQLite数据库
+分值：10分
 标准答案：题面声明的修复库、完成版SQL和三张业务报表均位于指定路径，数据库可由SQLite读取。
 关键字段：output/affiliate_payout_repaired.db；output/sql/rebuild_affiliate_payout.sql；output/reports目录。
 容差：路径和扩展名不设容差；CSV允许LF或CRLF行尾及必要转义。
@@ -10,6 +13,7 @@
 所属层级：L7产物结构或Schema或专业对象层
 
 检查项：源数据保护与结算规则消费
+分值：10分
 标准答案：输入库中的orders、click_touchpoints、partner_accounts和refunds在修复库中保持逐行一致；归因窗口、订单状态、域名、反作弊阈值、档位费率、舍入口径和两类裁决顺序均来自commission_rules.json。
 关键字段：四张源表；commission_rules.json全部业务字段；完成版SQL。
 容差：源表结构、主键和行值不设容差；规则枚举、整数与数组顺序按输入精确比较。
@@ -21,6 +25,7 @@
 所属层级：L3输入数据导入与完整性层
 
 检查项：归因候选与触点排除
+分值：20分
 标准答案：订单只关联同一user_id且click_ts不晚于order_ts的点击；触点按exclusion_precedence判断订单状态、落地域名、窗口、自引流、欺诈分数和合作方状态，首个命中原因写入excluded_touchpoints。
 关键字段：orders.order_id、user_id、order_ts和status；click_touchpoints.click_id、click_ts、landing_domain、self_referral和fraud_score；partner_accounts.active；excluded_touchpoints.reason。
 容差：业务主键、时间比较和原因枚举不设容差；触点集合按order_id与click_id比较，行序不计分。
@@ -32,6 +37,7 @@
 所属层级：L5多源关联与字段一致性层
 
 检查项：最后一次合格点击归因
+分值：20分
 标准答案：剩余候选依tie_breaker为每个order_id选择唯一点击；未入选的合格候选写入superseded_by_later_click；所有可付款订单均保留在commission_ledger，没有合格点击时归因字段为空且佣金字段为0。
 关键字段：order_id、click_id、click_ts、attributed_click_id、partner_id、commission_rate_bps、commission_cents和attribution_reason。
 容差：业务主键和枚举不设容差；没有业务排序的集合按主键比较。
@@ -43,6 +49,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：退款净额与整数分佣金
+分值：20分
 标准答案：net_amount_cents等于订单金额减去该订单全部退款；commission_rate_bps来自合作方tier对应档位；commission_cents按规则声明的整数基点与舍入口径计算。
 关键字段：orders.order_amount_cents；refunds.refund_amount_cents；partner_accounts.tier；commission_rate_bps；net_amount_cents；commission_cents。
 容差：金额、退款、基点和佣金均以整数分或整数基点表示，容差为0。
@@ -54,6 +61,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：合作方汇总
+分值：12分
 标准答案：partner_summary按partner_id汇总commission_ledger，空partner_id统一归入UNATTRIBUTED；payable_order_count、net_amount_cents、commission_cents和order_ids均由明细复算。
 关键字段：partner_id、payable_order_count、net_amount_cents、commission_cents和order_ids。
 容差：计数与整数分容差为0；order_ids按order_id升序连接。
@@ -65,6 +73,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：数据库与报表对账
+分值：8分
 标准答案：commission_ledger.csv、excluded_touchpoints.csv和partner_summary.csv的表头、业务主键、字段值及规定排序与修复库中的同名派生表一致。
 关键字段：三张CSV的全部字段；commission_ledger.order_id；excluded_touchpoints.order_id与click_id；partner_summary.partner_id。
 容差：允许必要CSV引号及LF或CRLF行尾；数值按上游评分项容差比较；空值语义必须一致。

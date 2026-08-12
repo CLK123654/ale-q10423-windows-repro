@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "task_id": "10423",
+  "change_scope": "score_environment_text_only_change",
+  "result": "PASS",
+  "score": {
+    "total_declared": 100,
+    "item_count": 7,
+    "items": [
+      {
+        "name": "交付路径与SQLite数据库",
+        "points": 10
+      },
+      {
+        "name": "源数据保护与结算规则消费",
+        "points": 10
+      },
+      {
+        "name": "归因候选与触点排除",
+        "points": 20
+      },
+      {
+        "name": "最后一次合格点击归因",
+        "points": 20
+      },
+      {
+        "name": "退款净额与整数分佣金",
+        "points": 20
+      },
+      {
+        "name": "合作方汇总",
+        "points": 12
+      },
+      {
+        "name": "数据库与报表对账",
+        "points": 8
+      }
+    ],
+    "points_sum": 100
+  },
+  "prompt_coverage_review": {
+    "completed": true,
+    "semantic_change_required": false,
+    "conclusion": "SQLite交付、来源与规则、候选排除、归因、退款佣金、合作方汇总和报表对账均有对应评分项"
+  },
+  "environment_coverage": {
+    "operating_system": true,
+    "primary_software_and_version": true,
+    "code_execution_dependency": true,
+    "cpu": true,
+    "gpu": true,
+    "disk": true,
+    "timeout": true,
+    "license_removed": true
+  },
+  "environment_license_text_present": false,
+  "field_name_count": 17,
+  "ale_csv_column_count": 19,
+  "attachment_sha256_before": {
+    "输入数据包.zip": "59723ddce0f24a617c23c880f434dd014ed1be922b78c8d6fde361de699c8022",
+    "reference.zip": "9a324c2b849452aaf2be3daf0a543e128d51e3cf997d344601bb5c70dd136141",
+    "关键标准答案.xlsx": "e536542e8b6576ba069e5ca533fc5d40d63c6a5feb35960ecf6b00e987e2ac6e",
+    "任务规格转化.xlsx": "a11b9d317fe55cd93643483d800470cb053617e1d6e4a43ad5f62fa3b1915546"
+  },
+  "attachment_sha256_after": {
+    "输入数据包.zip": "59723ddce0f24a617c23c880f434dd014ed1be922b78c8d6fde361de699c8022",
+    "reference.zip": "9a324c2b849452aaf2be3daf0a543e128d51e3cf997d344601bb5c70dd136141",
+    "关键标准答案.xlsx": "e536542e8b6576ba069e5ca533fc5d40d63c6a5feb35960ecf6b00e987e2ac6e",
+    "任务规格转化.xlsx": "a11b9d317fe55cd93643483d800470cb053617e1d6e4a43ad5f62fa3b1915546"
+  },
+  "attachments_unchanged": true,
+  "windows_rerun_required": false,
+  "lark_called": false,
+  "online_ai_detection_used_as_conclusion": false
+}
