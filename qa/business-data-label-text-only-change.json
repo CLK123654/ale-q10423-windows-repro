@@ -135,9 +135,21 @@
     "formula_errors": 0
   },
   "reused_windows_evidence": {
-    "run_id": 31597928283,
-    "file": "../../evidence/10423/run-31597928283/windows-verification.json",
-    "sha256": "a3e0ac46c8924e1cd28e99ddb57554b035168b901bd8e88f62a28895b5979e42",
+    "run_id": 31609037776,
+    "log_file": "../../evidence/10423/run-31609037776.log",
+    "log_sha256": "d5b4462092552d782d076fab6784e658f145fad52b6a5716e32b672598e036b9",
+    "text_only_evidence_file": "../../evidence/10423/run-31609037776-score-environment-text-only-change.json",
+    "text_only_evidence_sha256": "459887aa6621aab0ce2e78f70ba88e908c6abb2017ca56c4207df6b201ae642b",
+    "base_business_run_id": 31597928283,
+    "base_business_evidence_file": "../../evidence/10423/run-31597928283/windows-verification.json",
+    "base_business_evidence_sha256": "a3e0ac46c8924e1cd28e99ddb57554b035168b901bd8e88f62a28895b5979e42",
     "reason": "本次只调整数据来源称谓、评分标题、环境自然语言、规格描述和公开说明，没有改变业务数据、规则、代码、附件成员结构、答案语义或评分语义。"
+  },
+  "repo": {
+    "url": "https://github.com/CLK123654/ale-q10423-windows-repro",
+    "commit": "a35922fcbc065e7c03e28537e65508da9ecda5c3",
+    "commit_message": "Refine Q10423 business wording and specification [skip ci]",
+    "windows_workflow_triggered": false,
+    "remote_artifact_count": 0
   }
 }
