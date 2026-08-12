@@ -1,0 +1,11 @@
+七月上半月的联盟佣金即将结算。现有归因结果把高风险点击和停用合作方带进了付款明细，财务暂时无法放款。请重新整理订单与点击的关系，把触点排除、退款净额和分档佣金落到同一套SQLite交付中。
+
+input_data/database/affiliate_payout.db保存订单、点击触点、合作方账户和退款记录。input_data/rules/commission_rules.json给出归因窗口、可付款状态、落地域名、反作弊阈值、佣金档位、舍入口径、触点排序和排除顺序。input_data/starter/rebuild_affiliate_payout.sql是待完成的归因SQL，input_data/tools/run_task.py负责载入规则、执行SQL并导出报表。
+
+input_data/README.md说明每份材料的来源、用途和交付关系，开工前请先阅读。
+
+每个订单只考虑同一用户且不晚于下单时间的点击。点击按commission_rules.json声明的顺序判断订单状态、落地域名、归因窗口、自引流、欺诈分数和合作方状态；命中原因的触点进入excluded_touchpoints。其余候选依照tie_breaker选择最后一次合格点击，被更晚候选替代的触点也需记录原因。
+
+所有可付款订单都应进入commission_ledger。没有合格点击的订单保留空partner_id和attributed_click_id，佣金为0。net_amount_cents等于订单金额扣除该订单全部退款，commission_cents按合作方tier对应的整数基点计算，并依commission_rounding舍入。partner_summary包含未归因分组，订单数、净额、佣金和order_ids均从明细汇总。
+
+把完成SQL保存为output/sql/rebuild_affiliate_payout.sql，在input_data目录运行py tools/run_task.py。交付output/affiliate_payout_repaired.db以及reports下的commission_ledger.csv、excluded_touchpoints.csv和partner_summary.csv。修复库保留四张源表并新增三张派生表，三份报表分别按order_id、order_id与click_id、partner_id排序，并与库内派生表一致。

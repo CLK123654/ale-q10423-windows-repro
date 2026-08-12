@@ -1,0 +1,8 @@
+1. 使用SQLite打开database/affiliate_payout.db，检查orders、click_touchpoints、partner_accounts和refunds的结构、主键与外键。
+2. 从commission_rules.json读取归因窗口、可付款状态、落地域名、反作弊阈值、档位费率、舍入口径和两类裁决顺序。
+3. 在rebuild_affiliate_payout.sql中关联同一user_id的订单与先前点击，并按exclusion_precedence写入excluded_touchpoints。
+4. 对合格候选使用ROW_NUMBER，按click_ts和click_id的降序为每个order_id选出一条触点。
+5. 汇总refunds得到net_amount_cents，按partner_accounts.tier映射整数基点并计算commission_cents。
+6. 将每个可付款订单写入commission_ledger，没有合格点击时保留空归因字段和零佣金。
+7. 从commission_ledger按partner_id汇总partner_summary，并用GROUP_CONCAT生成有序order_ids。
+8. 运行py tools/run_task.py生成修复库和三张CSV，使用SQLite查询派生表并核对报表主键、字段和排序。

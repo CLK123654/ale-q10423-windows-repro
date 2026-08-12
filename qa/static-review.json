@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 169,
+  "violations": [],
+  "score_answer_leakage_matches": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_row_count": 18,
+  "task_spec_column_count": 2,
+  "task_asset_id": "sqlite_affiliate_payout_settlement",
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/affiliate_payout_repaired.db",
+    "output/reports/commission_ledger.csv",
+    "output/reports/excluded_touchpoints.csv",
+    "output/reports/partner_summary.csv",
+    "output/sql/rebuild_affiliate_payout.sql"
+  ],
+  "reference_paths": [
+    "output/affiliate_payout_repaired.db",
+    "output/reports/commission_ledger.csv",
+    "output/reports/excluded_touchpoints.csv",
+    "output/reports/partner_summary.csv",
+    "output/sql/rebuild_affiliate_payout.sql"
+  ],
+  "business_inputs": [
+    "input_data/database/affiliate_payout.db",
+    "input_data/rules/commission_rules.json",
+    "input_data/starter/rebuild_affiliate_payout.sql"
+  ],
+  "business_inputs_present": true,
+  "online_ai_detector_used_as_conclusion": false
+}

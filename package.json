@@ -1,0 +1,7 @@
+{
+  "name": "ale-q10423-windows-repro",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=24"},
+  "scripts": {"verify": "node verification/verify.mjs"}
+}
