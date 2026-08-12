@@ -12,7 +12,7 @@
 优先级：Gate项
 所属层级：L7产物结构或Schema或专业对象层
 
-2. 源数据保护与结算规则消费
+2. 业务材料与结算规则
 分值：10分
 标准答案：输入库中的orders、click_touchpoints、partner_accounts和refunds在修复库中保持逐行一致；归因窗口、订单状态、域名、反作弊阈值、档位费率、舍入口径和两类裁决顺序均来自commission_rules.json。
 关键字段：四张源表；commission_rules.json全部业务字段；完成版SQL。
