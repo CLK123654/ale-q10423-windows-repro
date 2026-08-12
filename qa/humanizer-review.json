@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "skill": "humanizer-zh",
+  "result": "PASS",
+  "reviewed_scopes": [
+    "任务名称",
+    "任务概要",
+    "任务prompt",
+    "关键动作",
+    "评分表",
+    "环境依赖",
+    "软件步骤",
+    "输入材料中的自然语言",
+    "Reference中的用户可见文字",
+    "关键标准答案工作簿全部自然语言",
+    "任务规格工作簿全部自然语言"
+  ],
+  "scores": {
+    "直接性": 10,
+    "节奏": 9,
+    "信任度": 10,
+    "真实性": 9,
+    "精炼度": 9,
+    "total": 47
+  },
+  "minimum_total": 45,
+  "notes": [
+    "用结算放款受阻开场，交代财务、渠道运营和风控人员各自使用的交付物。",
+    "归因窗口、排除顺序、触点排序、档位费率和舍入口径均来自可见规则，没有模糊引用或无来源数字。",
+    "候选内容只保留点击归因与联盟结算工作，没有运行验收、规则回放、重复执行和错误输入编排。",
+    "评分表只说明规则、业务主键、字段、容差和复算关系，精确样本答案留在五页标答。",
+    "正文长短句交错，已删除宣传腔、机械分段、否定式排比、填充词和自动判卷口吻。"
+  ],
+  "online_ai_detection_used_as_conclusion": false,
+  "reviewed_artifacts_sha256": {
+    "任务名称.txt": "e31efd8c139ef90efff431c52ae466ac88c4427e4ec3d7a7e7b664c5a238b95a",
+    "任务概要.txt": "0a9755815c48278d3d6ffbd32fca62212612836b77e3b2821aba800f96d8de90",
+    "任务prompt.txt": "1e1db3ce749b61f5f7fe204df53e9f8c30a21ad86b6809e0c59a6b51819f2f7d",
+    "关键动作.txt": "b6ba01397935128a078362ccfb93e5a5edd0632735c0a007644348670878dcd4",
+    "评分表.txt": "c2be105cf2465a7c18c54e0d1e80845c7634e2642767da357ac28995d12d08c4",
+    "环境依赖.txt": "2443b72107480e9dc064c2360f40ddf52ad5f81f057d3f077b29cc518b87c683",
+    "相关专业软件的关键步骤.txt": "756af6c2dd3b4e21c50999b87b15e4f87e6b4128ae03d4154972c31db019280a",
+    "task_fields.json": "4e4ffbf540e14030c7d2b59f9872ad761e429dbca97891018e326a5897576ffb",
+    "ALE-专家数据作业表.csv": "732298682d424d8a07a2e45ba2e1881f520e72937d50b340b94c87cb98ab5844",
+    "输入数据包.zip": "b5a39feb478c59a1910e9f6468aded725fba829f6bfb4dce30c0c3fe0aea45c7",
+    "reference.zip": "9a324c2b849452aaf2be3daf0a543e128d51e3cf997d344601bb5c70dd136141",
+    "关键标准答案.xlsx": "63f3ce14cd782522fca118f13eb241fe110047451e9fd0c196bfc0343c1eebb2",
+    "任务规格转化.xlsx": "f612ca80a38f3e4ff39791697c03407537ab6ce81f2854893a4645ac46f4d969"
+  }
+}

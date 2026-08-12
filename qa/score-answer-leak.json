@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "source": "评分表.txt",
+  "hits": [],
+  "score_total": 100,
+  "score_item_count": 7,
+  "numeric_titles": true
+}

@@ -1,0 +1,143 @@
+{
+  "result": "PASS",
+  "task_key": "id:10423",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "replacements": [
+    {
+      "file": "输入数据包.zip#input_data/README.md",
+      "before_sha256": "59723ddce0f24a617c23c880f434dd014ed1be922b78c8d6fde361de699c8022",
+      "after_sha256": "b5a39feb478c59a1910e9f6468aded725fba829f6bfb4dce30c0c3fe0aea45c7",
+      "changes": [
+        [
+          "脱敏演练数据库及虚构联盟业务",
+          "本次联盟佣金结算批次，用户与合作方字段已脱敏"
+        ]
+      ]
+    },
+    {
+      "file": "任务规格转化.xlsx#任务规格转化",
+      "before_sha256": "a11b9d317fe55cd93643483d800470cb053617e1d6e4a43ad5f62fa3b1915546",
+      "after_sha256": "f612ca80a38f3e4ff39791697c03407537ab6ce81f2854893a4645ac46f4d969",
+      "changes": [
+        [
+          "虚构并脱敏的联盟结算演练数据库与业务规则",
+          "本次联盟佣金结算批次，包括字段已脱敏的订单、点击触点、合作方账户、退款记录和结算规则"
+        ],
+        [
+          "仅完成条件收尾",
+          "补齐实现边界、可验证点和非评分实现细节"
+        ]
+      ]
+    },
+    {
+      "file": "关键标准答案.xlsx#交付物答案清单",
+      "before_sha256": "e536542e8b6576ba069e5ca533fc5d40d63c6a5feb35960ecf6b00e987e2ac6e",
+      "after_sha256": "63f3ce14cd782522fca118f13eb241fe110047451e9fd0c196bfc0343c1eebb2",
+      "changes": [
+        [
+          "固定路径或命名规则",
+          "固定路径/命名规则"
+        ]
+      ]
+    },
+    {
+      "file": "评分表.txt",
+      "before_sha256": "6884df5ef2924790731871851ce36263b756a0f3e5f2dc9d2e0f37b33472ba24",
+      "after_sha256": "c2be105cf2465a7c18c54e0d1e80845c7634e2642767da357ac28995d12d08c4",
+      "changes": [
+        [
+          "检查项：标题",
+          "阿拉伯数字序号标题"
+        ]
+      ]
+    },
+    {
+      "file": "环境依赖.txt",
+      "before_sha256": "f11466a58e969f1ca005303a0b4d25c81c1f13efa3aa71ddd34906c1e0e14a70",
+      "after_sha256": "2443b72107480e9dc064c2360f40ddf52ad5f81f057d3f077b29cc518b87c683",
+      "changes": [
+        [
+          "固定验证版本、硬件数字、许可证和业务风险提示",
+          "通用操作系统、软件、代码依赖、资源、磁盘和有限超时条件"
+        ]
+      ]
+    },
+    {
+      "file": "repo/README.md",
+      "before_sha256": "1dfe0f9cd6a4e74cf8a78ee1764e20b293dc65121f7cd64654fb20db4cac1ca8",
+      "after_sha256": "09326a28b5f28c17f1e14b22179f57d014287fc7b387c271099078036996303a",
+      "changes": [
+        [
+          "Windows工作流和业务检查过程",
+          "联盟结算任务的业务用途与交付"
+        ]
+      ]
+    }
+  ],
+  "current_attachment_sha256": {
+    "输入数据包.zip": "b5a39feb478c59a1910e9f6468aded725fba829f6bfb4dce30c0c3fe0aea45c7",
+    "reference.zip": "9a324c2b849452aaf2be3daf0a543e128d51e3cf997d344601bb5c70dd136141",
+    "关键标准答案.xlsx": "63f3ce14cd782522fca118f13eb241fe110047451e9fd0c196bfc0343c1eebb2",
+    "任务规格转化.xlsx": "f612ca80a38f3e4ff39791697c03407537ab6ce81f2854893a4645ac46f4d969"
+  },
+  "scans": {
+    "scope": [
+      "17_fields",
+      "input_zip_all_text_members",
+      "reference_zip_all_text_members",
+      "answer_workbook_all_cells",
+      "spec_workbook_all_cells",
+      "public_repo_candidate_visible_text"
+    ],
+    "mixed_boundary_space_natural_language": 0,
+    "quote_natural_language": 0,
+    "business_data_label_hits": 0,
+    "process_language_hits": 0,
+    "controlled_enum_exemption": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
+    "static_gate": ".qa/static_gate.json",
+    "task_contract": "PASS",
+    "score_answer_leak": ".qa/score-answer-leak.json"
+  },
+  "specification_semantic_audit": {
+    "two_column_structure": true,
+    "row_count": 21,
+    "task_id": "sqlite_affiliate_payout_settlement",
+    "task_id_is_name_based_lower_snake_case": true,
+    "input_source_is_current_batch": true,
+    "business_goal_is_realistic": true,
+    "deliverables_are_closed": true,
+    "main_software_steps_are_operational": true,
+    "implementation_boundary_is_business_facing": true,
+    "table_field_collage_hits": 0,
+    "authoring_or_validation_voice_hits": 0,
+    "ai_template_hits": 0
+  },
+  "humanizer_zh": {
+    "total": 47,
+    "threshold": 45,
+    "online_ai_detection_used_as_conclusion": false,
+    "file": ".qa/humanizer-review.json"
+  },
+  "workbook_visual_review": {
+    "result": "PASS",
+    "preview": ".qa/workbook-previews/spec/01-任务规格转化.png",
+    "clipped_cells": 0,
+    "formula_errors": 0
+  },
+  "reused_windows_evidence": {
+    "run_id": 31597928283,
+    "file": "../../evidence/10423/run-31597928283/windows-verification.json",
+    "sha256": "a3e0ac46c8924e1cd28e99ddb57554b035168b901bd8e88f62a28895b5979e42",
+    "reason": "本次只调整数据来源称谓、评分标题、环境自然语言、规格描述和公开说明，没有改变业务数据、规则、代码、附件成员结构、答案语义或评分语义。"
+  }
+}

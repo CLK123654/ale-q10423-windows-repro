@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "task_key": "id:10423",
+  "result": "PASS",
+  "review_method": "human_semantic_review",
+  "online_ai_detection_used_as_conclusion": false,
+  "business_role": "负责联盟佣金结算复核的数据工程师",
+  "downstream_consumers": [
+    "财务使用佣金明细生成付款清单",
+    "渠道运营使用合作方汇总核对结算",
+    "风控使用触点排除表追查风险点击"
+  ],
+  "consumed_inputs": [
+    "affiliate_payout.db中的订单、触点、合作方和退款记录",
+    "commission_rules.json中的归因、反作弊、费率和舍入规则",
+    "rebuild_affiliate_payout.sql中的待完成SQLite逻辑"
+  ],
+  "continuous_work_chain": [
+    "读取源表与结算规则",
+    "关联同一用户的订单和先前触点",
+    "按规则顺序记录排除原因",
+    "选择最后一次合格点击",
+    "扣除退款并计算整数分佣金",
+    "汇总合作方并导出数据库与三张报表"
+  ],
+  "main_software_necessity": "任务需要SQLite执行多表关联、窗口函数、事务、派生表和聚合查询，普通文本处理无法替代数据库对象与SQL执行结果。",
+  "hard_number_sources": [
+    "归因窗口、反作弊阈值、档位费率和舍入口径来自commission_rules.json",
+    "订单金额和退款金额来自affiliate_payout.db",
+    "软件版本范围来自输入SQL能力和Python标准库入口要求"
+  ],
+  "reference_integrity": "题面只引用输入包内实际存在的数据库、规则、SQL和入口文件，没有模糊来源或伪引用。",
+  "closure": "Prompt声明的修复库、SQL和三张报表均在Reference、五页答案和评分表中逐项对应。",
+  "reasoning_continuity": "候选触点先经排除顺序裁决，再按排序规则唯一归因；归因身份决定费率，退款决定净额，订单明细最终汇总为合作方结果。",
+  "hallucination_or_unsupported_claims": [],
+  "unreasonable_requirements": [],
+  "pseudo_citations": [],
+  "reasoning_gaps": [],
+  "candidate_answer_leakage": []
+}
